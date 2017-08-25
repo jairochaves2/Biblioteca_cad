@@ -1,0 +1,120 @@
+-- MySQL Administrator dump 1.4
+--
+-- ------------------------------------------------------
+-- Server version	5.5.18
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+
+--
+-- Create schema biblioteca_cad
+--
+
+CREATE DATABASE IF NOT EXISTS biblioteca_cad;
+USE biblioteca_cad;
+
+--
+-- Definition of table `cadastro`
+--
+
+DROP TABLE IF EXISTS `cadastro`;
+CREATE TABLE `cadastro` (
+  `id` int(100) NOT NULL AUTO_INCREMENT,
+  `titulo` varchar(254) NOT NULL,
+  `autor` varchar(254) NOT NULL,
+  `editora` varchar(50) NOT NULL,
+  `prateleira` varchar(30) NOT NULL,
+  `cdd` varchar(30) NOT NULL,
+  `cdu` varchar(30) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `cadastro`
+--
+
+/*!40000 ALTER TABLE `cadastro` DISABLE KEYS */;
+INSERT INTO `cadastro` (`id`,`titulo`,`autor`,`editora`,`prateleira`,`cdd`,`cdu`) VALUES 
+ (1,'Os Escravos','Castro Alves ','qwe','Prateleira 1',' 1883 ','1883 '),
+ (2,'A Mortalha de Alzira','Aluísio de Azevedo','paulinas','Prateleira 1','1913','191'),
+ (3,'o aviador','123','123','Prateleira 1','123','123'),
+ (4,'O PREDADOR','QWE','QWE','Prateleira 5','QWE','QWE'),
+ (5,'qwe','qwe','qwe','Prateleira 1','123','456'),
+ (6,'titulo','autor','editora','Prateleira 7','cdd','cdu'),
+ (7,'jairo','jão','teste','Prateleira 1','321','432'),
+ (8,'rosa','jair','qwe','Prateleira 1','123','321'),
+ (9,'qwe','qwe','qwe','Prateleira 1','qwe','qwe'),
+ (10,'qwe','qwe','wqe','Prateleira 3','qwe','qwe');
+/*!40000 ALTER TABLE `cadastro` ENABLE KEYS */;
+
+
+--
+-- Definition of table `emprestimos`
+--
+
+DROP TABLE IF EXISTS `emprestimos`;
+CREATE TABLE `emprestimos` (
+  `id` int(100) NOT NULL AUTO_INCREMENT,
+  `titulo` varchar(100) NOT NULL,
+  `autor` varchar(100) NOT NULL,
+  `editora` varchar(100) NOT NULL,
+  `prateleira` varchar(30) NOT NULL,
+  `cdd` varchar(30) NOT NULL,
+  `cdu` varchar(30) NOT NULL,
+  `nome` varchar(100) NOT NULL,
+  `D_emprestimo` date NOT NULL,
+  `D_devolucao` date NOT NULL,
+  `celular` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `emprestimos`
+--
+
+/*!40000 ALTER TABLE `emprestimos` DISABLE KEYS */;
+INSERT INTO `emprestimos` (`id`,`titulo`,`autor`,`editora`,`prateleira`,`cdd`,`cdu`,`nome`,`D_emprestimo`,`D_devolucao`,`celular`) VALUES 
+ (1,'jairo','jão','teste','Prateleira 1','321','432','jairoo','2014-02-09','2014-02-15','(00)0000-0000'),
+ (2,'Os Escravos','Castro Alves ','qwe','Prateleira 1',' 1883 ','1883 ','jairo','2014-02-09','2014-02-15','(00)0000-0000'),
+ (3,'o aviador','123','123','Prateleira 1','123','123','jaoao','2014-02-09','2014-02-15','(00)0000-0000'),
+ (5,'Os Escravos','Castro Alves ','qwe','Prateleira 1',' 1883 ','1883 ','rarar','2014-02-09','2014-02-15','(00)0000-0000'),
+ (6,'Os Escravos','Castro Alves ','qwe','Prateleira 1',' 1883 ','1883 ','jão','2014-02-11','2014-02-17','(00)0000-0000');
+/*!40000 ALTER TABLE `emprestimos` ENABLE KEYS */;
+
+
+--
+-- Definition of table `senha`
+--
+
+DROP TABLE IF EXISTS `senha`;
+CREATE TABLE `senha` (
+  `password` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `senha`
+--
+
+/*!40000 ALTER TABLE `senha` DISABLE KEYS */;
+INSERT INTO `senha` (`password`) VALUES 
+ ('javacad');
+/*!40000 ALTER TABLE `senha` ENABLE KEYS */;
+
+
+
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
